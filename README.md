@@ -9,14 +9,23 @@ E:\
 In OpenSSL_Build Folder:
 ## MD - Multi-Threaded Dll
 - config
-  perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage" --openssldir="E:\DevData\OpenSSL_Build\Stage\SSL" --release
+  perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\StageMD32" --openssldir="E:\DevData\OpenSSL_Build\StageMD32\SSL" --release
 - update makefile:
   remove /Zi
 - make
   nmake
   nmake install
   nmake clean'
-
+  
+## MDd - Multi-Threaded Dll debug
+- config
+  perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\StageMDd32" --openssldir="E:\DevData\OpenSSL_Build\StageMDd32\SSL" --debug
+- update makefile:
+  update /Zi -> Z7
+- make
+  nmake
+  nmake install
+  nmake clean'
 ## MDd
 perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage" --openssldir="E:\DevData\OpenSSL_Build\Stage\SSL" --debug
 update makefile:
