@@ -7,16 +7,18 @@ E:\
     | --StageXX
 ```
 In OpenSSL_Build Folder:
-## MD - Multi-Threaded Dll
+## WIN32 
+Compile using Visual studio X86 native tools.
+### MD - Multi-Threaded Dll
 - config
-  perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\StageMD32" --openssldir="E:\DevData\OpenSSL_Build\StageMD32\SSL" --release
+  perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage32\MD" --openssldir="E:\DevData\OpenSSL_Build\Stage32\MD\SSL" --release
 - update makefile:
   remove /Zi /Fdxxx
 - make
   nmake
   nmake install
   nmake clean
-## MDd - Multi-Threaded Dll debug
+### MDd - Multi-Threaded Dll debug
 - config
   perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage32\MDd" --openssldir="E:\DevData\OpenSSL_Build\Stage32\MDd\SSL" --debug
 - update makefile:
@@ -25,7 +27,7 @@ In OpenSSL_Build Folder:
   nmake
   nmake install
   nmake clean
-## MT - Multi-Threaded
+### MT - Multi-Threaded
 - config
   perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage32\MT" --openssldir="E:\DevData\OpenSSL_Build\Stage32\MT\SSL" --release no-shared
 - update makefile:
@@ -34,24 +36,55 @@ In OpenSSL_Build Folder:
   nmake
   nmake install
   nmake clean
-## MTd - Multi-Threaded
+### MTd - Multi-Threaded
 - config
-  perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage32\MT" --openssldir="E:\DevData\OpenSSL_Build\Stage32\MT\SSL" -- no-shared
+  perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage32\MTd" --openssldir="E:\DevData\OpenSSL_Build\Stage32\MTd\SSL" -- no-shared
+- update makefile:
+  update /Zi -> Z7, remove /Fdxxx, /MT->/MTd
+- make
+  nmake
+  nmake install
+  nmake clean
+  
+## WIN64
+Compile using Visual studio X64 native tools.
+### MD - Multi-Threaded Dll
+- config
+  perl ..\OpenSSLSrc\Configure VC-WIN64 --prefix="E:\DevData\OpenSSL_Build\Stage64\MD" --openssldir="E:\DevData\OpenSSL_Build\Stage64\MD\SSL" --release
+- update makefile:
+  remove /Zi /Fdxxx
+- make
+  nmake
+  nmake install
+  nmake clean
+### MDd - Multi-Threaded Dll debug
+- config
+  perl ..\OpenSSLSrc\Configure VC-WIN64 --prefix="E:\DevData\OpenSSL_Build\Stage64\MDd" --openssldir="E:\DevData\OpenSSL_Build\Stage64\MDd\SSL" --debug
 - update makefile:
   update /Zi -> Z7, remove /Fdxxx
 - make
   nmake
   nmake install
   nmake clean
+### MT - Multi-Threaded
+- config
+  perl ..\OpenSSLSrc\Configure VC-WIN64 --prefix="E:\DevData\OpenSSL_Build\Stage64\MT" --openssldir="E:\DevData\OpenSSL_Build\Stage64\MT\SSL" --release no-shared
+- update makefile:
+  remove /Zi, /Fdxxx
+- make
+  nmake
+  nmake install
+  nmake clean
+### MTd - Multi-Threaded
+- config
+  perl ..\OpenSSLSrc\Configure VC-WIN64 --prefix="E:\DevData\OpenSSL_Build\Stage64\MTd" --openssldir="E:\DevData\OpenSSL_Build\Stage64\MTd\SSL" -- no-shared
+- update makefile:
+  update /Zi -> Z7, remove /Fdxxx, /MT->/MTd
+- make
+  nmake
+  nmake install
+  nmake clean
   
-## MDd
-perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage" --openssldir="E:\DevData\OpenSSL_Build\Stage\SSL" --debug
-update makefile:
-update /Zi -> Z7
-
-## MT
-perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage" --openssldir="E:\DevData\OpenSSL_Build\Stage\SSL" --release no-shared
-##MTd
 
 
 
