@@ -1,10 +1,11 @@
 # OpenSSl1.1.1-build
 Folder structure:
-> E:\
+```
+E:\
  | --OpensslSrc
  | --OpenSSL_Build
     | --StageXX
-
+```
 In OpenSSL_Build Folder:
 ## MD - Multi-Threaded Dll
 - config
