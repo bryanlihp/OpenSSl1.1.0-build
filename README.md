@@ -1,23 +1,21 @@
-# OpenSSl1.1.0-build
+# OpenSSl1.1.1-build
+Folder structure:
+E:\
+ |--OpensslSrc
+ |--OpenSSL_Build
+    |--StageXX
 
-MT:
-perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage" --openssldir="E:\DevData\OpenSSL_Build\Stage\SSL"  --release no-shared
-
-MD
-perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage" --openssldir="E:\DevData\OpenSSL_Build\Stage\SSL"  --release
-
-MTd
-perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage" --openssldir="E:\DevData\OpenSSL_Build\Stage\SSL"  --debug no-shared
-
-MDd
-perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage" --openssldir="E:\DevData\OpenSSL_Build\Stage\SSL"  --debug
-
-
-// in openssl build folder
+In OpenSSL_Build Folder:
 ## MD - Multi-Threaded Dll
-perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage" --openssldir="E:\DevData\OpenSSL_Build\Stage\SSL" --release
-update makefile:
-remove /Zi
+- config
+  perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage" --openssldir="E:\DevData\OpenSSL_Build\Stage\SSL" --release
+- update makefile:
+  remove /Zi
+- make
+  nmake
+  nmake install
+  nmake clean'
+
 ## MDd
 perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage" --openssldir="E:\DevData\OpenSSL_Build\Stage\SSL" --debug
 update makefile:
