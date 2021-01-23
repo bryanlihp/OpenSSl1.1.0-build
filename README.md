@@ -1,6 +1,6 @@
 # OpenSSl1.1.1-build
 Folder structure:
-E:\
+> E:\
  `|--OpensslSrc
  `|--OpenSSL_Build
     `|--StageXX
