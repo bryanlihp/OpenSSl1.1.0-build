@@ -32,6 +32,7 @@ Compile using Visual studio X86 native tools.
   perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage32\MT" --openssldir="E:\DevData\OpenSSL_Build\Stage32\MT\SSL" --release no-shared
 - update makefile:
   remove /Zi, /Fdxxx
+  remove the line that copies ossl_static.pdb
 - make
   nmake
   nmake install
@@ -40,7 +41,8 @@ Compile using Visual studio X86 native tools.
 - config
   perl ..\OpenSSLSrc\Configure VC-WIN32 --prefix="E:\DevData\OpenSSL_Build\Stage32\MTd" --openssldir="E:\DevData\OpenSSL_Build\Stage32\MTd\SSL" -- no-shared
 - update makefile:
-  update /Zi -> Z7, remove /Fdxxx, /MT->/MTd
+  update /Zi -> Z7, remove /Fdxxx, /MT->/MTd, MDd -> MTd
+  remove the line that copies ossl_static.pdb
 - make
   nmake
   nmake install
